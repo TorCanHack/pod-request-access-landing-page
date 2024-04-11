@@ -1,0 +1,234 @@
+@mixin center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include center-content;
+    font-family: "Chivo", sans-serif;
+    margin-top: 5rem;
+    
+
+    main {
+
+        @include center-content;
+        position: relative;
+        width: min(95%, 375px);
+        height: 667px;
+        background-image: url("assets/mobile/image-host.jpg");
+        background-repeat: no-repeat;
+        text-align: center;
+
+
+        .logo {
+            position: relative;
+            z-index: 1;
+            bottom: 1rem;
+                        
+        }
+
+
+        article {
+            position: relative;
+            z-index: 100;
+            @include center-content;
+
+            h1 {
+                color: white;
+                font-size: 1.625rem;
+                font-weight: 200;
+                line-height: 38px;
+
+                span {
+                    color: #54E6AF;
+                }
+            }
+
+            p {
+                font-size: 0.938rem;
+                color: #C2CBE5;
+                line-height: 25px;
+                font-weight: 100;
+                padding: 0 2rem;
+            }
+
+            div {
+
+                width: 315px;
+                
+                height: 17px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top: 2rem;
+                
+                
+               
+                img {
+                    color: #5A668A;
+                    position: relative;
+                   
+                }
+
+                .google {
+                    width: 73px;
+                    height: 17px;
+
+                }
+
+                .pocket-casts {
+                    width: 77px;
+                    height: 15px;
+                }
+
+             
+            }
+
+            .tablet-and-desktop-button {
+
+                display: none;
+            }
+
+            .mobile-input {
+                width: 327px;
+                height: 46px;
+                background-color: #2C344B;
+                border: none;
+                margin-top: 2rem;
+                border-radius: 2rem;
+            }
+
+            .mobile-button {
+                width: 326px;
+                height: 46px;
+                background-color: #54E6AF;
+                color: #121725;
+                border: 0;
+                border-radius: 2rem;
+                margin-top: 1rem;
+            }
+
+ 
+        }
+    }
+    main::before {
+        background-color: #121725;
+        display: block;
+        width: 100%;
+        height: 100%;
+        content: "";
+        opacity: 0.8;
+        z-index: 0;
+        position: absolute;
+    }
+
+    @media screen and (min-width: 769px) {
+
+        main {
+
+            width: 768px;
+            height: 1024px;
+            background: url("assets/tablet/image-host.jpg");
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-size: 419px 767px;
+            z-index: 100;
+            background-color: #121725;
+
+            .logo {
+                right: 17rem;
+                bottom: 10rem;
+            }
+
+            article {
+
+                background-color: #121725;
+                width: 635px;
+                height: 509px;
+                bottom: 1.5rem;
+                text-align: left;
+
+                h1 {
+                    font-size: 3rem;
+                    font-weight: 100;
+                    line-height: 56px;
+                }
+
+                p {
+
+                    padding: 0 16rem 0 0;
+                    position: relative;
+                    bottom: 2rem;
+                }
+
+                div {
+                    width: 536px;
+                    height: 29px;
+                    position: relative;
+                    top: 7rem;
+                    right: 3rem;
+
+                    .google {
+                        width: 125px;
+                        height: 18px;
+                    }
+
+                    .pocket-casts {
+
+                        width: 125px;
+                        height: 18px;
+
+                    }
+                }
+
+                .mobile-button, .mobile-input {
+                    display: none;
+                }
+
+                .tablet-and-desktop-button {
+                    position: absolute;
+                    display: inline-block;
+                    background-color: white;
+                    border-radius: 2rem;
+                    bottom: 117px;
+                    right: 210px;
+                    width: 162px;
+                    height: 46px;
+                    border: none;
+                    z-index: 1;
+                    background-color: #54E6AF;
+
+                
+                    
+                   
+                }
+
+                .tablet-and-desktop-input {
+
+                    width: 427px;
+                    height: 56px;
+                    border-radius: 2rem;
+                    border: none;
+                    background-color: #2C344B;
+                    position: relative;
+                    right: 100px;
+                    bottom: 4rem;
+
+                }
+            }
+        }
+
+        main::before {
+            display: none;
+        }
+
+
+        
+    }
+}
