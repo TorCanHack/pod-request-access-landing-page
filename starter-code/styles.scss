@@ -7,12 +7,13 @@
 
 * {
     box-sizing: border-box;
+    
 }
 
 body {
     @include center-content;
     font-family: "Chivo", sans-serif;
-    margin-top: 5rem;
+    
     
 
     main {
@@ -90,21 +91,17 @@ body {
              
             }
 
-            .tablet-and-desktop-button {
-
-                display: none;
-            }
-
-            .mobile-input {
+            input {
                 width: 327px;
                 height: 46px;
                 background-color: #2C344B;
                 border: none;
                 margin-top: 2rem;
                 border-radius: 2rem;
+                color: white;
             }
 
-            .mobile-button {
+            button {
                 width: 326px;
                 height: 46px;
                 background-color: #54E6AF;
@@ -114,7 +111,17 @@ body {
                 margin-top: 1rem;
             }
 
+            .error-message {
+                font-size: 0.75rem;
+                color: #FB3E3E;
+                position: relative;
+            }
+
  
+        }
+
+        .dots {
+            display: none;
         }
     }
     main::before {
@@ -129,6 +136,8 @@ body {
     }
 
     @media screen and (min-width: 769px) {
+
+        margin: 0;
 
         main {
 
@@ -151,7 +160,7 @@ body {
                 background-color: #121725;
                 width: 635px;
                 height: 509px;
-                bottom: 1.5rem;
+                top: 1.5rem;
                 text-align: left;
 
                 h1 {
@@ -173,6 +182,9 @@ body {
                     position: relative;
                     top: 7rem;
                     right: 3rem;
+                    @include center-content;
+                    flex-direction: row;
+                    justify-content: space-between;
 
                     .google {
                         width: 125px;
@@ -187,40 +199,47 @@ body {
                     }
                 }
 
-                .mobile-button, .mobile-input {
-                    display: none;
-                }
 
-                .tablet-and-desktop-button {
+                button {
                     position: absolute;
                     display: inline-block;
                     background-color: white;
                     border-radius: 2rem;
                     bottom: 117px;
-                    right: 210px;
+                    right: 212px;
                     width: 162px;
                     height: 46px;
                     border: none;
                     z-index: 1;
                     background-color: #54E6AF;
-
-                
-                    
                    
                 }
 
-                .tablet-and-desktop-input {
+                input {
 
+                    display: inline-block;
                     width: 427px;
                     height: 56px;
                     border-radius: 2rem;
                     border: none;
                     background-color: #2C344B;
-                    position: relative;
-                    right: 100px;
-                    bottom: 4rem;
+                    position: absolute;
+                    right: 13rem;
+                    bottom: 7rem;
 
                 }
+
+                .error-message {
+                    top: -1rem;
+                    right: 6rem;
+                }
+            }
+
+            .dots {
+                display: inline-block;
+                position: relative;
+                top: 11rem;
+                right: 12rem;
             }
         }
 
@@ -229,6 +248,74 @@ body {
         }
 
 
+        
+    }
+
+    @media screen and (min-width: 1440px) {
+
+        main {
+
+            width: 1440px;
+            height: 900px;
+            background-image: url("assets/desktop/image-host.jpg");
+            background-size: 888px 640px;
+            background-position: right top 8rem;
+
+            .logo {
+                right: 31rem;
+                top: -5rem;
+            }
+
+            article {
+                width: 723px;
+                height: 509px;
+                top: 5.5rem;
+                right: 12rem;
+
+                h1 {
+                    font-size: 3.25rem;
+                    line-height: 62px;
+                }
+
+                input{
+                    width: 427px;
+                    right: 19rem;
+                    bottom: 6rem;
+                
+                
+                }
+
+                button {
+
+                    bottom: 101px;
+                    right: 310px;
+                   
+
+                }
+
+                button:hover {
+                    cursor: pointer;
+                    background-color: #B3FFE2;
+                }
+
+                .error-message {
+
+                    right: 8rem;
+                }
+
+                div {
+                    top: 7rem;
+                    right: 5.7rem;
+                }
+
+            
+            }
+
+            .dots {
+                top: 2rem;
+                right: -30rem;
+            }
+        }
         
     }
 }
